@@ -1,0 +1,33 @@
+body {
+    background-color: #044;
+    color: white;
+    font-family: 'Monda', sans-serif;
+}
+.navbar-custom {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+}
+.navbar-custom li a:hover {
+    background-color: transparent;
+}
+.navbar-custom {
+    display: inline-block;
+}
+ul {
+    list-style: none;
+    text-align: center;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: gray;
+}
+.name-header {
+    font-size: 100px;
+    text-align: center;
+}
+.container {}
