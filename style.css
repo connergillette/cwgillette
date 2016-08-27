@@ -6,19 +6,14 @@ body {
 .navbar-custom {
     background-color: transparent;
     border: none;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
 }
-.navbar-custom li a:hover {
+.navbar-custom li {
     background-color: transparent;
-}
-.navbar-custom {
-    display: inline-block;
-}
-ul {
-    list-style: none;
-    text-align: center;
+    display: inline;
+    position: relative;
+    float: left;
+    display: block;
+    right: 50%;
 }
 a {
     color: white;
@@ -29,5 +24,13 @@ a:hover {
 .name-header {
     font-size: 100px;
     text-align: center;
+    padding-top: 40vh;
 }
-.container {}
+ul {
+    position: relative;
+    float: left;
+    display: block;
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
