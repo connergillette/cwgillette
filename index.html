@@ -7,19 +7,30 @@
 
     <body>
         <h1 class="name-header">Conner Gillette</h1>
-        <nav class="navbar navbar-custom">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Resume</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div id="content-container" class="collapse content-container"></div>
+        <div class="container navbar-container">
+            <nav class="navbar navbar-custom">
+                <div class="container">
+                    <ul class="nav navbar-nav">
+                        <li><a onclick="expand" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">About</a></li>
+                        <li><a onclick="resume" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">Resume</a></li>
+                        <li><a onclick="expand" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </body>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        function resume() {
+            alert("ran");
+            document.getElementById("content-container").innerHTML = '<object type="type/html" data="resume.html"></object>';
+        }
+    </script>
 
     </html>

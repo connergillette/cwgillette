@@ -1,30 +1,18 @@
+/* BEGIN GENERAL */
+
 body {
     background-color: #044;
     color: white;
     font-family: 'Monda', sans-serif;
 }
-.navbar-custom {
-    background-color: transparent;
-    border: none;
-}
-.navbar-custom li {
-    background-color: transparent;
-    display: inline;
-    position: relative;
-    float: left;
-    display: block;
-    right: 50%;
-}
 a {
     color: white;
 }
 a:hover {
-    color: gray;
+    /*color: gray;*/
 }
-.name-header {
-    font-size: 100px;
-    text-align: center;
-    padding-top: 40vh;
+a:active {
+    color: #044;
 }
 ul {
     position: relative;
@@ -33,4 +21,105 @@ ul {
     left: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* END GENERAL */
+
+
+/* BEGIN NAV */
+
+.navbar {
+    animation-name: expand-down;
+    animation-duration: 1s;
+}
+.navbar:after {
+    position: fixed;
+    bottom: 0;
+}
+.navbar-custom {
+    background-color: transparent;
+    border: none;
+}
+.navbar-custom:after {
+    position: fixed;
+    bottom: 0;
+}
+.navbar-container:after {
+    position: fixed;
+    bottom: 0;
+}
+.navbar-custom li {
+    background-color: transparent;
+    display: inline;
+    position: relative;
+    float: left;
+    display: block;
+    right: 50%;
+    font-size: 25px;
+}
+.navbar-nav li a:hover {
+    background-color: white;
+    color: #044;
+    font-weight: bold;
+}
+
+/*.navbar-nav li a:after {
+    animation-name: expand;
+    animation-duration: 1s;
+}*/
+
+.name-header {
+    font-size: 100px;
+    text-align: center;
+    animation-name: expand-up;
+    animation-duration: 1s;
+    padding-top: 5vh;
+}
+
+/*.name-header:after {
+    padding-top: 5vh;
+}*/
+
+
+/* END NAV */
+
+
+/*@keyframes expand-up {
+    from {
+        padding-top: 40vh;
+    }
+    to {
+        padding-top: 5vh;
+    }
+}*/
+
+
+/*@keyframes expand-down {
+    from {
+        padding: 0px;
+    }
+    to {
+        position: fixed;
+        bottom: 0;
+    }
+}*/
+
+@keyframes expand {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 72vh;
+    }
+}
+.content-container {
+    background-color: #003D3D;
+    font-size: 4vh;
+    text-align: center;
+    animation-name: expand;
+    animation-duration: 1s;
+    height: 72vh;
+}
+.content-container::after {
+    height: 72vh;
 }
