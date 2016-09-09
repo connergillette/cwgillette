@@ -62,12 +62,6 @@ ul {
     color: #044;
     font-weight: bold;
 }
-
-/*.navbar-nav li a:after {
-    animation-name: expand;
-    animation-duration: 1s;
-}*/
-
 .name-header {
     font-size: 100px;
     text-align: center;
@@ -75,34 +69,13 @@ ul {
     animation-duration: 1s;
     padding-top: 5vh;
 }
-
-/*.name-header:after {
-    padding-top: 5vh;
-}*/
-
+@media (max-width: 400px) {
+    .name-header {
+        font-size: 20vw;
+    }
+}
 
 /* END NAV */
-
-
-/*@keyframes expand-up {
-    from {
-        padding-top: 40vh;
-    }
-    to {
-        padding-top: 5vh;
-    }
-}*/
-
-
-/*@keyframes expand-down {
-    from {
-        padding: 0px;
-    }
-    to {
-        position: fixed;
-        bottom: 0;
-    }
-}*/
 
 @keyframes expand {
     from {
@@ -119,6 +92,7 @@ ul {
     animation-name: expand;
     animation-duration: 1s;
     height: 72vh;
+    width: 100%:
 }
 .content-container::after {
     height: 72vh;
