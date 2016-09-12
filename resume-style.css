@@ -2,10 +2,62 @@ body {
     color: white;
     font-family: 'Monda', sans-serif;
     background-color: transparent;
-    overflow: hidden;
+    overflow: auto;
+}
+a, a:hover, a:active {
+    color: white;
+    text-decoration: none;
+}
+p {
+    padding-left: 40px;
 }
 .text-container {
     width: 60vw;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
+    font-size: 16px;
+    margin-bottom: -30px;
+}
+.contact-info {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.section-header {
+    background-color: white;
+    color: #044;
+    font-size: 24px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.text-section {
+    padding-bottom: 30px;
+}
+.interests {
+    text-align: center;
+}
+.row {
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    padding-left: 100px;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {}
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: white;
+}
+::-webkit-scrollbar-corner {
+    /* 6 */
+}
+::-webkit-resizer {
+    /* 7 */
 }
