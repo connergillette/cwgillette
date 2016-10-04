@@ -14,7 +14,6 @@
                     <ul class="nav navbar-nav">
                         <li><a onclick="openAbout()" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">About</a></li>
                         <li><a onclick="openResume()" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">Resume</a></li>
-                        <!-- <li><a onclick="openFile('file:///resume.html')" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">Projects</a></li> -->
                         <li><a onclick="openContact()" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">Contact</a></li>
                     </ul>
                 </div>
@@ -27,17 +26,54 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
+        var container = document.getElementById('content-container');
+        var current = "";
+
+        function collapse(type) {
+            if ($(container).attr("aria-expanded") == 'true') {
+                setTimeout(function() {
+                    document.getElementById("content-container").innerHTML = '<object data="' + type + '.html" style="width: 100%; height: 100%; background-color: transparent; overflow: auto;"></object>';
+                    current = type;
+                }, 300);
+                if (type != (current)) {
+                    setTimeout(function() {
+                        $(container).collapse('toggle');
+                        document.activeElement.focus();
+                    }, 400);
+                    return true;
+                }
+                document.activeElement.focus();
+                current = type;
+            }
+            if (current != "") {
+                document.activeElement.blur();
+            }
+            current = type;
+            return false;
+        }
+
         function openResume() {
-            document.getElementById("content-container").innerHTML = '<object data="resume.html" style="width: 100%; height: 100%; background-color: transparent; overflow: auto;"></object>';
+            if (!collapse('resume')) {
+                document.getElementById("content-container").innerHTML = '<object data="resume.html" style="width: 100%; height: 100%; background-color: transparent; overflow: auto;"></object>';
+                $(container).collapse('toggle');
+            }
         }
 
         function openAbout() {
-            document.getElementById("content-container").innerHTML = '<object data="about.html" style="width: 100%; height: 100%; background-color: transparent; overflow: auto;"></object>';
+            if (!collapse('about')) {
+                document.getElementById("content-container").innerHTML = '<object data="about.html" style="width: 100%; height: 100%; background-color: transparent; overflow: auto;"></object>';
+                $('#container').collapse('toggle');
+            }
         }
 
         function openContact() {
-            document.getElementById("content-container").innerHTML = '<object data="contact.html" style="width: 100%; height: 100%; background-color: transparent; overflow: auto;"></object>';
+            if (!collapse('contact')) {
+                document.getElementById("content-container").innerHTML = '<object data="contact.html" style="width: 100%; height: 100%; background-color: transparent; overflow: auto;"></object>';
+                $('#container').collapse('toggle');
+            }
         }
     </script>
+
+    </html>
 
     </html>

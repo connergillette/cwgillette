@@ -41,6 +41,7 @@ a.highlight:hover {
 /* Resume */
 
 .text-container {
+    padding-top: 1vh;
     width: 60vw;
     height: 100%;
     margin-left: auto;
@@ -86,18 +87,21 @@ a.highlight:hover {
 
 /* Contact */
 
+.contact-container {
+    padding-top: 30vh;
+}
 .social-row {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     text-align: center;
-    padding-left: -50px;
+    padding-top: 5vh;
 }
 .social {
-    height: 150px;
-    width: 150px;
-    display: inline-block;
-}
-.social-sm {
-    height: 100px;
-    width: 100px;
-    /*margin-top: 25px;*/
-    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+    color: #044;
+    display: inline;
+    padding: 10px;
+    padding-top: 20px;
 }
