@@ -7,13 +7,16 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
 a {
     color: white;
 }
+
 a:active {
     color: #044;
     background-color: white;
 }
+
 ul {
     position: relative;
     float: left;
@@ -21,6 +24,7 @@ ul {
     left: 50%;
     text-align: center;
 }
+
 
 /* END GENERAL */
 
@@ -31,22 +35,27 @@ ul {
     animation-name: expand-down;
     animation-duration: 1s;
 }
+
 .navbar:after {
     position: fixed;
     bottom: 0;
 }
+
 .navbar-custom {
     background-color: transparent;
     border: none;
 }
+
 .navbar-custom:after {
     position: fixed;
     bottom: 0;
 }
+
 .navbar-container:after {
     position: fixed;
     bottom: 0;
 }
+
 .navbar-custom li {
     background-color: transparent;
     position: relative;
@@ -55,23 +64,27 @@ ul {
     right: 50%;
     font-size: 25px;
 }
+
 .nav>li>a:focus {
     text-decoration: none;
     background-color: white;
     color: #044;
 }
+
 .name-header {
     font-size: 100px;
     text-align: center;
     /*animation-name: expand-up;*/
     animation-duration: 1s;
-    padding-top: 5vh;
+    padding-top: 2vh;
 }
+
 @media (max-width: 400px) {
     .name-header {
         font-size: 20vw;
     }
 }
+
 
 /* END NAV */
 
@@ -80,18 +93,20 @@ ul {
         height: 0px;
     }
     to {
-        height: 75vh;
+        height: 72vh;
     }
 }
+
 .content-container {
     background-color: #003D3D;
     font-size: 4vh;
     text-align: center;
     animation-name: expand;
     animation-duration: 1s;
-    height: 75vh;
+    height: 72vh;
     width: 100%;
 }
+
 .content-container::after {
     height: 69vh;
     overflow-y: auto;
