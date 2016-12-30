@@ -41,15 +41,15 @@
                         document.activeElement.focus();
                     }, 400);
                     return true;
+                    current = type;
                 }
-                document.activeElement.focus();
+                if (current != "") {
+                    document.activeElement.blur();
+                }
+
                 current = type;
+                return false;
             }
-            if (current != "") {
-                document.activeElement.blur();
-            }
-            current = type;
-            return false;
         }
 
         function openResume() {
