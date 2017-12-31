@@ -111,3 +111,7 @@ ul {
     height: 69vh;
     overflow-y: auto;
 }
+
+.profile-image {
+    max-width: 500px;
+}
