@@ -7,9 +7,14 @@
     <link rel="prefetch" href="./resume.html">
     <link rel="prefetch" href="./contact.html">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet">
+
+    <meta name="description" content="I am a full-stack web developer and software developer in my third year at the University of Washington.">
+    <meta name="keywords" content="Conner, Gillette, Conner Gillette, UW, Seattle, web, software, developer, student, internship, dota, dota 2">
+    <meta name="author" content="Conner Gillette">
 </head>
 
 <body>
@@ -23,17 +28,28 @@
         <nav class="navbar navbar-custom">
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li><a onclick="collapse('about')" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">About</a></li>
-                    <li><a onclick="collapse('resume')" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">Resume</a></li>
-                    <li><a onclick="collapse('contact')" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false" aria-controls="#content-container">Contact</a></li>
+                    <li>
+                        <a onclick="collapse('about')" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false"
+                            aria-controls="#content-container">About</a>
+                    </li>
+                    <li>
+                        <a onclick="collapse('resume')" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false"
+                            aria-controls="#content-container">Resume</a>
+                    </li>
+                    <li>
+                        <a onclick="collapse('contact')" role="button" data-toggle="collapse" href="#content-container" aria-expanded="false"
+                            aria-controls="#content-container">Contact</a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </div>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 <script>
     var container = document.getElementById('content-container');
     var current = "";
@@ -41,7 +57,7 @@
     function collapse(type) {
         // if container is open at method call
         if ($(container).attr("aria-expanded") == 'true') {
-            setTimeout(function() {
+            setTimeout(function () {
                 //alert('current: ' + current + ' type: ' + type)
                 document.getElementById(type).style.display = 'block';
                 // current = type;
@@ -49,7 +65,7 @@
                 current = type;
             }, 300);
             if (type != (current)) {
-                setTimeout(function() {
+                setTimeout(function () {
                     $(container).collapse('toggle');
                     document.activeElement.focus();
                 }, 400);
