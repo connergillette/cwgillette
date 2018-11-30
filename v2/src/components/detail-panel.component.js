@@ -7,40 +7,41 @@ class DetailPanel extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      expanded: false
-    };
-  }
+    console.log("props: ");
+    console.log(props);
 
-  expand() {
-    console.log("Expand clicked!");
-    this.setState({
-      expanded: true
-    });
+    this.state = {
+      expanded: props.expanded,
+      toggleExpanded: props.toggleExpanded
+    };
   }
 
   render() {
     return (
       <div className="detail-container">
-        <div className="container text-center">
+        <div
+          className={
+            "container text-center " + (this.state.expanded ? "expanded" : "")
+          }
+        >
           <h1 className={"" + (this.state.expanded ? "expanded" : "")}>
-            {" "}
-            Conner Gillette{" "}
+            Conner Gillette ({this.state.expanded})
           </h1>
-          <h2> Full stack web / software developer from Seattle, WA. </h2>
-          <div className="row button-row" onClick={this.expand}>
+          <h2> Full stack web / software developer</h2>
+          <h3>Seattle, Washington</h3>
+          <div className="row button-row" onClick={this.state.toggleExpanded}>
             <div className="col-4">
-              <div className="opal opal-outline opal-awake opal-bright">
+              <div className="opal opal-outline opal-awake opal-success">
                 <div className="opal-soften">About</div>
               </div>
             </div>
             <div className="col-4">
-              <div className="opal opal-outline opal-awake opal-bright">
+              <div className="opal opal-outline opal-awake opal-success">
                 <div className="opal-soften">Resume</div>
               </div>
             </div>
             <div className="col-4">
-              <div className="opal opal-outline opal-awake opal-bright">
+              <div className="opal opal-outline opal-awake opal-success">
                 <div className="opal-soften">Projects</div>
               </div>
             </div>

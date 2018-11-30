@@ -3,10 +3,21 @@ import React, { Component } from "react";
 import "../App.css";
 
 class ActionPanel extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = props;
+  }
+
   render() {
     return (
       <div className="action-container">
-        <div className="container text-center">
+        <div
+          className={
+            "profile-container container text-center" +
+            (this.state.expanded ? "expanded" : "")
+          }
+        >
           <img
             src="./assets/profile.jpg"
             alt="Smiling young man wearing glasses."
