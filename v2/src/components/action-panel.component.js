@@ -14,14 +14,15 @@ class ActionPanel extends Component {
       <div className="action-container">
         <div
           className={
-            "profile-container container text-center" +
+            "profile-container container text-center " +
             (this.state.expanded ? "expanded" : "")
           }
         >
+          {this.state.expanded}
           <img
             src="./assets/profile.jpg"
             alt="Smiling young man wearing glasses."
-            className="profile"
+            className={"profile"}
           />
           {/* <div className="container contact-container text-center">
             <div className="row">
