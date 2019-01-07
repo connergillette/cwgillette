@@ -16,6 +16,15 @@ class DetailPanel extends Component {
     };
   }
 
+  toggleExpandedLocal = () => {
+    if (this.state.expanded) {
+      this.setState({ expanded: false });
+    } else {
+      this.setState({ expanded: true });
+    }
+    this.state.toggleExpanded();
+  };
+
   render() {
     return (
       <div className="detail-container">
@@ -29,7 +38,7 @@ class DetailPanel extends Component {
           </h1>
           <h2> Full stack web / software developer</h2>
           <h3>Seattle, Washington</h3>
-          <div className="row button-row" onClick={this.state.toggleExpanded}>
+          <div className="row button-row" onClick={this.toggleExpandedLocal}>
             <div className="col-4">
               <div className="opal opal-outline opal-awake opal-success">
                 <div className="opal-soften">About</div>
