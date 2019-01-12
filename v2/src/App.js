@@ -18,18 +18,17 @@ class App extends Component {
     console.log("toggleExpanded " + this.state.expanded);
     this.setState({ expanded: !this.state.expanded });
   };
-
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="row no-gutters">
-          <div className="col-md-4 col-xs-12">
+          {/* <div className="col-md-4 col-xs-12">
             <ActionPanel
               expanded={this.state.expanded}
               toggleExpanded={this.toggleExpanded}
             />
-          </div>
-          <div className="col-md-8 col-xs-12">
+          </div> */}
+          <div className="col-md-12">
             <DetailPanel
               expanded={this.state.expanded}
               toggleExpanded={this.toggleExpanded}
