@@ -86,12 +86,14 @@ h3 {
 .subheader-container {
   overflow: hidden;
   max-height: 200px;
-  -webkit-transition: max-height 0.3s;
-  transition: max-height 0.3s;
+  opacity: 1;
+  -webkit-transition: max-height 0.3s, opacity 0.3s;
+  transition: max-height 0.3s, opacity 0.3s;
 }
 
 .expanded .subheader-container {
   max-height: 0px;
+  opacity: 0;
 }
 
 .expanded h1 {

@@ -12,6 +12,8 @@ class DetailPanel extends Component {
       toggleExpanded: props.toggleExpanded,
       mouseX: 0,
       mouseY: 0,
+      totalWidth: 0,
+      totalHeight: 0,
       hasTransitioned: true
     };
   }
@@ -51,7 +53,10 @@ class DetailPanel extends Component {
 
         <div className={"col-12"}>
           <div className={"header " + (this.state.expanded ? "expanded " : "")}>
-            <h1>CONNER GILLETTE</h1>
+            <h1>
+              CONNER GILLETTE {this.state.mouseX} {this.state.mouseY}
+            </h1>
+
             {/* {this.state.mouseX} {this.state.mouseY} */}
             <div className="subheader-container">
               <h2>Full stack web / software developer</h2>
@@ -63,25 +68,64 @@ class DetailPanel extends Component {
                     ref="about-button"
                     className="opal opal-outline opal-awake opal-success"
                     onClick={this.toggleExpandedLocal}
-                    // style={{
-                    //   backgroundColor: `rgb(${this.state.mouseX -
-                    //     this.state.mouseY}, ${this.state.mouseY -
-                    //     this.state.mouseX}, ${this.state.mouseX / 2 +
-                    //     this.state.mouseY / 2})`
-                    //   // filter: `blur(${(this.state.mouseX - this.state.mouseY) /
-                    //   //   100}px)`
-                    // }}
+                    style={{
+                      // opacity: this.state.mouseY / window.innerHeight,
+                      color: `rgb(${300 -
+                        (this.state.mouseY / window.innerHeight) * 255}, ${300 -
+                        (this.state.mouseY / window.innerHeight) * 255}, ${300 -
+                        (this.state.mouseY / window.innerHeight) * 255} )`,
+                      // backgroundColor: `rgb(${(this.state.mouseX /
+                      //   window.innerWidth) *
+                      //   255}, ${(this.state.mouseY / window.innerHeight) *
+                      //   255}, 0)`,
+                      backgroundColor: `rgb(${(this.state.mouseY /
+                        window.innerHeight) *
+                        255}, ${(this.state.mouseY / window.innerHeight) *
+                        255}, ${(this.state.mouseY / window.innerHeight) *
+                        255} )`,
+                      filter: `saturate(${(this.state.mouseY /
+                        window.innerHeight) *
+                        100}%)`
+                      // filter: `blur(${(this.state.mouseX / window.innerWidth) *
+                      //   5}px)`
+                    }}
                   >
                     <div className="opal-soften">About</div>
                   </div>
                 </div>
                 <div className="col-4">
-                  <div className="opal opal-outline opal-awake opal-rainbow-soft">
+                  <div
+                    className="opal opal-outline opal-awake opal-rainbow-soft"
+                    style={{
+                      opacity: this.state.mouseY / window.innerHeight,
+                      backgroundColor: `rgb(${(this.state.mouseX /
+                        window.innerWidth) *
+                        255}, ${(this.state.mouseY / window.innerHeight) *
+                        255}, ${((this.state.mouseX + this.state.mouseY + 200) /
+                        (window.innerWidth + window.innerHeight)) *
+                        255})`
+                      // filter: `blur(${(this.state.mouseX - this.state.mouseY) /
+                      //   100}px)`
+                    }}
+                  >
                     <div className="opal-soften">Resume</div>
                   </div>
                 </div>
                 <div className="col-4">
-                  <div className="opal opal-outline opal-awake opal-bright">
+                  <div
+                    className="opal opal-outline opal-awake opal-bright"
+                    style={{
+                      opacity: this.state.mouseY / window.innerHeight,
+                      backgroundColor: `rgb(${(this.state.mouseX /
+                        window.innerWidth) *
+                        255}, ${(this.state.mouseY / window.innerHeight) *
+                        255}, ${((this.state.mouseX + this.state.mouseY) /
+                        (window.innerWidth + window.innerHeight)) *
+                        255})`
+                      // filter: `blur(${(this.state.mouseX - this.state.mouseY) /
+                      //   100}px)`
+                    }}
+                  >
                     <div className="opal-soften">Projects</div>
                   </div>
                 </div>
