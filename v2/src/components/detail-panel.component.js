@@ -28,7 +28,7 @@ class DetailPanel extends Component {
   render() {
     return (
       <div className="row">
-        <div className={"col-12 text-center"}>
+        {/*  <div className={"col-12 text-center"}>
           <div
             className={
               "profile-container container " +
@@ -40,17 +40,15 @@ class DetailPanel extends Component {
               alt="Smiling young man wearing glasses."
               className={"profile " + (this.props.expanded ? "expanded" : "")}
             />
-          </div>
-        </div>
-        <div className={this.props.expanded ? "col-9" : "col-12"}>
-          <div
-            className={"text-center " + (this.state.expanded ? "expanded" : "")}
-          >
-            <h1 className={"" + (this.state.expanded ? "expanded" : "")}>
-              Conner Gillette
-            </h1>
-            <h2> Full stack web / software developer</h2>
-            <h3>Seattle, Washington</h3>
+          </div> 
+        </div>*/}
+        <div className={"col-12"}>
+          <div className={"header " + (this.state.expanded ? "expanded" : "")}>
+            <h1>Conner Gillette</h1>
+            <div className="subheader-container">
+              <h2>Full stack web / software developer</h2>
+              <h3>Seattle, Washington</h3>
+            </div>
             <div className="container button-container">
               <div className="row">
                 <div className="col-4">

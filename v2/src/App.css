@@ -1,23 +1,45 @@
 body {
-  background-color: whitesmoke;
   height: 100vh;
   /* font-family: "Catamaran", Helvetica, sans-serif; */
   font-family: futura-pt, sans-serif;
   color: #292929 !important;
 }
 
-.container {
+.header {
   padding-top: 5vh;
+  text-align: center;
+  -webkit-transition: padding-top 0.4s;
+  transition: padding-top 0.4s;
+}
+
+.expanded .header {
+  padding-top: 0vh;
 }
 
 .profile-container {
   text-align: center;
 }
 
-.profile-container .expanded {
-  text-align: left !important;
-  background-color: darkslategray;
+.opal-header:before {
+  height: 1000px;
+  width: 1000px;
 }
+
+.content-container {
+  /* background-color: whitesmoke; */
+  height: 100vh !important;
+  width: 100vw;
+  padding: 0px;
+}
+
+.content-container .expanded {
+  height: 100vh !important;
+  width: 100vw;
+}
+
+/* .profile-container .expanded {
+  background-color: darkslategray;
+} */
 
 /* ACTION PANEL */
 .profile {
@@ -33,17 +55,32 @@ body {
   /* width: calc(20vw + 20px); */
 }
 
-.profile .expanded {
+/* .profile .expanded {
   border: 10px solid red !important;
-}
+} */
 
 h1 {
   font-size: 80px;
   font-weight: bold;
   padding-top: 50px;
-  -webkit-transition: font-size 0.2s;
-  transition: font-size 0.2s;
   white-space: nowrap;
+  -webkit-transition: font-size 0.2s, padding-top 0.4s;
+  transition: font-size 0.2s, padding-top 0.4s;
+}
+
+.subheader-container {
+  overflow: hidden;
+  max-height: 200px;
+  -webkit-transition: max-height 0.3s;
+  transition: max-height 0.3s;
+}
+
+.expanded .subheader-container {
+  max-height: 0px;
+}
+
+.expanded h1 {
+  padding-top: 0px;
 }
 
 /* .profile:hover {
@@ -56,6 +93,7 @@ h1 {
 
 .opal {
   max-width: 150px !important;
+  z-index: 99999;
 }
 
 .contact-container a,
@@ -74,6 +112,13 @@ h1 {
 
 .button-container {
   width: 50vw;
+  padding-top: 50px;
+  -webkit-transition: padding-top 0.3s;
+  transition: padding-top 0.3s;
+}
+
+.expanded .button-container {
+  padding-top: 0px;
 }
 
 .opal,
@@ -82,6 +127,16 @@ h1 {
   height: 30px !important;
   font-size: 15px;
   font-weight: bold;
+}
+
+.opal:hover {
+  cursor: pointer;
+}
+
+.opal-outline {
+  border: 2px solid #292929 !important;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
 }
 
 .contact-container {

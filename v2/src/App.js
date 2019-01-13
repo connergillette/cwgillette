@@ -20,21 +20,23 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="container">
-        <div className="row no-gutters">
-          {/* <div className="col-md-4 col-xs-12">
-            <ActionPanel
-              expanded={this.state.expanded}
-              toggleExpanded={this.toggleExpanded}
-            />
-          </div> */}
-          <div className="col-md-12">
-            <DetailPanel
-              expanded={this.state.expanded}
-              toggleExpanded={this.toggleExpanded}
-            />
-          </div>
-        </div>
+      <div
+        className={
+          "container-fluid content-container " +
+          (this.state.expanded ? "expanded" : "")
+        }
+      >
+        {/* <div className="container"> */}
+        {/* <div className="row">
+          <div className="col-md-12"> */}
+        {/* <div class={this.state.expanded ? "opal-soften" : ""}> */}
+        <DetailPanel
+          expanded={this.state.expanded}
+          toggleExpanded={this.toggleExpanded}
+        />
+        {/* </div> */}
+        {/* </div>
+        </div> */}
       </div>
     );
   }
