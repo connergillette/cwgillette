@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "./button.component";
 import ReactDOM from "react-dom";
 // import logo from "./logo.svg";
 import "../App.css";
@@ -20,8 +21,8 @@ class DetailPanel extends Component {
 
   _onMouseMove(e) {
     this.setState({
-      mouseX: e.screenX - e.target.offsetLeft,
-      mouseY: e.screenY
+      mouseX: e.pageX,
+      mouseY: e.pageY
     });
   }
 
@@ -53,9 +54,7 @@ class DetailPanel extends Component {
 
         <div className={"col-12"}>
           <div className={"header " + (this.state.expanded ? "expanded " : "")}>
-            <h1>
-              CONNER GILLETTE {this.state.mouseX} {this.state.mouseY}
-            </h1>
+            <h1>CONNER GILLETTE</h1>
 
             {/* {this.state.mouseX} {this.state.mouseY} */}
             <div className="subheader-container">
@@ -64,70 +63,25 @@ class DetailPanel extends Component {
             <div className="container button-container">
               <div className="row">
                 <div className="col-4">
-                  <div
-                    ref="about-button"
-                    className="opal opal-outline opal-awake opal-success"
-                    onClick={this.toggleExpandedLocal}
-                    style={{
-                      // opacity: this.state.mouseY / window.innerHeight,
-                      color: `rgb(${300 -
-                        (this.state.mouseY / window.innerHeight) * 255}, ${300 -
-                        (this.state.mouseY / window.innerHeight) * 255}, ${300 -
-                        (this.state.mouseY / window.innerHeight) * 255} )`,
-                      // backgroundColor: `rgb(${(this.state.mouseX /
-                      //   window.innerWidth) *
-                      //   255}, ${(this.state.mouseY / window.innerHeight) *
-                      //   255}, 0)`,
-                      backgroundColor: `rgb(${(this.state.mouseY /
-                        window.innerHeight) *
-                        255}, ${(this.state.mouseY / window.innerHeight) *
-                        255}, ${(this.state.mouseY / window.innerHeight) *
-                        255} )`,
-                      filter: `saturate(${(this.state.mouseY /
-                        window.innerHeight) *
-                        100}%)`
-                      // filter: `blur(${(this.state.mouseX / window.innerWidth) *
-                      //   5}px)`
-                    }}
-                  >
-                    <div className="opal-soften">About</div>
-                  </div>
+                  <Button
+                    mouseX={this.state.mouseX}
+                    mouseY={this.state.mouseY}
+                    text="About"
+                  />
                 </div>
                 <div className="col-4">
-                  <div
-                    className="opal opal-outline opal-awake opal-rainbow-soft"
-                    style={{
-                      opacity: this.state.mouseY / window.innerHeight,
-                      backgroundColor: `rgb(${(this.state.mouseX /
-                        window.innerWidth) *
-                        255}, ${(this.state.mouseY / window.innerHeight) *
-                        255}, ${((this.state.mouseX + this.state.mouseY + 200) /
-                        (window.innerWidth + window.innerHeight)) *
-                        255})`
-                      // filter: `blur(${(this.state.mouseX - this.state.mouseY) /
-                      //   100}px)`
-                    }}
-                  >
-                    <div className="opal-soften">Resume</div>
-                  </div>
+                  <Button
+                    mouseX={this.state.mouseX}
+                    mouseY={this.state.mouseY}
+                    text="Resume"
+                  />
                 </div>
                 <div className="col-4">
-                  <div
-                    className="opal opal-outline opal-awake opal-bright"
-                    style={{
-                      opacity: this.state.mouseY / window.innerHeight,
-                      backgroundColor: `rgb(${(this.state.mouseX /
-                        window.innerWidth) *
-                        255}, ${(this.state.mouseY / window.innerHeight) *
-                        255}, ${((this.state.mouseX + this.state.mouseY) /
-                        (window.innerWidth + window.innerHeight)) *
-                        255})`
-                      // filter: `blur(${(this.state.mouseX - this.state.mouseY) /
-                      //   100}px)`
-                    }}
-                  >
-                    <div className="opal-soften">Projects</div>
-                  </div>
+                  <Button
+                    mouseX={this.state.mouseX}
+                    mouseY={this.state.mouseY}
+                    text="Projects"
+                  />
                 </div>
               </div>
 

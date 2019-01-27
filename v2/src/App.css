@@ -74,6 +74,8 @@ h1 {
   font-weight: bold;
   padding-top: 10%;
   white-space: nowrap;
+  /* text-shadow: 2px 2px 4px #acacac; */
+
   -webkit-transition: font-size 0.2s, padding-top 0.4s;
   transition: font-size 0.2s, padding-top 0.4s;
 }
@@ -111,6 +113,7 @@ h3 {
 .opal {
   max-width: 150px !important;
   z-index: 99999;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .contact-container a,
@@ -143,13 +146,14 @@ h3 {
 .opal,
 .opal-soften {
   width: 100%;
-  height: 30px !important;
+  /* height: 30px !important; */
   font-size: 15px;
   font-weight: bold;
 }
 
 .opal:hover {
   cursor: pointer;
+  color: white !important;
 }
 
 .opal-outline {
