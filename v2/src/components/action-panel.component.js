@@ -5,85 +5,24 @@ import "../App.css";
 class ActionPanel extends Component {
   constructor(props) {
     super(props);
-
-    this.state = props;
+    this.props = props;
   }
 
   render() {
     return (
-      <div className="action-container">
+      <div>
+        {this.props.expanded}
         <div
           className={
-            "profile-container container text-center " +
-            (this.state.expanded ? "expanded" : "")
+            "profile-container container " +
+            (this.props.expanded ? "expanded" : "")
           }
         >
-          {this.state.expanded}
           <img
             src="./assets/profile.jpg"
             alt="Smiling young man wearing glasses."
-            className={"profile"}
+            className={"profile " + (this.props.expanded ? "expanded" : "")}
           />
-          {/* <div className="container contact-container text-center">
-            <div className="row">
-              <div className="col-3">
-                <a
-                  href="mailto:connerwgillette@gmail.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="text-center"
-                >
-                  <img
-                    className="social-icon"
-                    src="./assets/envelope.png"
-                    alt="Envelope icon"
-                  />
-                </a>
-              </div>
-              <div className="col-3">
-                <a
-                  href="https://github.com/connergillette"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="text-center"
-                >
-                  <img
-                    className="social-icon"
-                    src="./assets/github.png"
-                    alt="GitHub icon"
-                  />
-                </a>
-              </div>
-              <div className="col-3">
-                <a
-                  href="https://linkedin.com/in/connergillette"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="text-center"
-                >
-                  <img
-                    className="social-icon"
-                    src="./assets/linkedin.svg"
-                    alt="LinkedIn icon"
-                  />
-                </a>
-              </div>
-              <div className="col-3">
-                <a
-                  href="https://twitter.com/connerwgillette"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="text-center"
-                >
-                  <img
-                    className="social-icon"
-                    src="./assets/twitter.svg"
-                    alt="Twitter icon"
-                  />
-                </a>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     );
