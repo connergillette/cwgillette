@@ -57,13 +57,34 @@ class Button extends Component {
           ref={element => {
             this.setPosition(element);
           }}
-          className="opal opal-outline opal-awake opal-rainbow-soft"
+          className="opal opal-outline opal-awake opal-rainbow"
           style={{
             // opacity: this.state.mouseY / window.innerHeight,
-            color: `rgb(${300 -
-              (this.state.mouseY / window.innerHeight) * 255}, ${300 -
-              (this.state.mouseY / window.innerHeight) * 255}, ${300 -
-              (this.state.mouseY / window.innerHeight) * 255} )`,
+            color: `rgb(${
+              (Math.abs(
+                (this.state.posX - this.state.mouseX) / this.state.posX
+              ) *
+                200 +
+                Math.abs(
+                  (this.state.posY - this.state.mouseY) / this.state.posY
+                ) *
+                200)}, ${
+              (Math.abs(
+                (this.state.posX - this.state.mouseX) / this.state.posX
+              ) *
+                200 +
+                Math.abs(
+                  (this.state.posY - this.state.mouseY) / this.state.posY
+                ) *
+                200)}, ${
+              (Math.abs(
+                (this.state.posX - this.state.mouseX) / this.state.posX
+              ) *
+                200 +
+                Math.abs(
+                  (this.state.posY - this.state.mouseY) / this.state.posY
+                ) *
+                200)} )`,
             backgroundColor: `rgb(${300 -
               (Math.abs(
                 (this.state.posX - this.state.mouseX) / this.state.posX
@@ -72,23 +93,23 @@ class Button extends Component {
                 Math.abs(
                   (this.state.posY - this.state.mouseY) / this.state.posY
                 ) *
-                  300)}, ${300 -
-              (Math.abs(
-                (this.state.posX - this.state.mouseX) / this.state.posX
-              ) *
-                300 +
-                Math.abs(
-                  (this.state.posY - this.state.mouseY) / this.state.posY
+                300)}, ${300 -
+                (Math.abs(
+                  (this.state.posX - this.state.mouseX) / this.state.posX
                 ) *
+                  300 +
+                  Math.abs(
+                    (this.state.posY - this.state.mouseY) / this.state.posY
+                  ) *
                   300)}, ${300 -
-              (Math.abs(
-                (this.state.posX - this.state.mouseX) / this.state.posX
-              ) *
-                300 +
-                Math.abs(
-                  (this.state.posY - this.state.mouseY) / this.state.posY
-                ) *
-                  300)})`
+                  (Math.abs(
+                    (this.state.posX - this.state.mouseX) / this.state.posX
+                  ) *
+                    300 +
+                    Math.abs(
+                      (this.state.posY - this.state.mouseY) / this.state.posY
+                    ) *
+                    300)})`
             // filter: `saturate(${(this.state.mouseY / window.innerHeight) * 100}%)`
           }}
         >
