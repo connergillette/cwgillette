@@ -15,7 +15,8 @@ class DetailPanel extends Component {
       mouseY: 0,
       totalWidth: 0,
       totalHeight: 0,
-      hasTransitioned: true
+      hasTransitioned: true,
+      selection: ""
     };
   }
 
@@ -26,8 +27,8 @@ class DetailPanel extends Component {
     });
   }
 
-  toggleExpandedLocal = () => {
-    this.setState({ expanded: !this.state.expanded });
+  toggleExpandedLocal = (selection) => {
+    this.setState({ expanded: !this.state.expanded, selection: selection });
     this.state.toggleExpanded();
   };
 
@@ -62,31 +63,41 @@ class DetailPanel extends Component {
             </div>
             <div className="container button-container">
               <div className="row">
-                <div className="col-4">
+
+                <div className="col-4" onClick={(e) => this.toggleExpandedLocal("About")}>
                   <Button
                     mouseX={this.state.mouseX}
                     mouseY={this.state.mouseY}
+                    expanded={this.state.expanded}
+                    selection={this.state.selection}
+                    opal="bright"
                     text="About"
                   />
                 </div>
-                <div className="col-4">
+                <div className="col-4" onClick={(e) => this.toggleExpandedLocal("Resume")}>
                   <Button
                     mouseX={this.state.mouseX}
                     mouseY={this.state.mouseY}
+                    expanded={this.state.expanded}
+                    selection={this.state.selection}
+                    opal="light"
                     text="Resume"
                   />
                 </div>
-                <div className="col-4">
+                <div className="col-4" onClick={(e) => this.toggleExpandedLocal("Projects")}>
                   <Button
                     mouseX={this.state.mouseX}
                     mouseY={this.state.mouseY}
+                    expanded={this.state.expanded}
+                    selection={this.state.selection}
+                    opal=""
                     text="Projects"
                   />
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-12">
+                <div className="col-12 subheader-container">
                   <h3 className="text-center">
                     Seattle, Washington, United States of America
                   </h3>

@@ -12,7 +12,10 @@ class Button extends Component {
       mouseY: this.props.mouseY,
       text: this.props.text,
       posX: 0,
-      posY: 0
+      posY: 0,
+      expanded: this.props.expanded,
+      selection: this.props.selection,
+      opal: this.props.opal
     };
   }
 
@@ -22,6 +25,14 @@ class Button extends Component {
       nextProps.mouseY !== this.props.mouseY
     ) {
       this.setState({ mouseX: nextProps.mouseX, mouseY: nextProps.mouseY });
+    }
+
+    if (nextProps.expanded !== this.props.expanded) {
+      this.setState({ expanded: nextProps.expanded });
+    }
+
+    if (nextProps.selection !== this.props.selection) {
+      this.setState({ selection: nextProps.selection });
     }
   }
 
@@ -41,82 +52,63 @@ class Button extends Component {
     }
   }
 
+  isSelected() {
+    return this.state.selection === this.state.text
+  }
+
   render() {
-    return (
-      <div>
-        {/* <p>
-          {255 -
-            (Math.abs((this.state.posX - this.state.mouseX) / this.state.posX) *
-              255 +
-              Math.abs(
-                (this.state.posY - this.state.mouseY) / this.state.posY
-              ) *
-                255)}
-        </p> */}
+    if (this.state.expanded === true) {
+      return (<div>
         <div
           ref={element => {
             this.setPosition(element);
           }}
-          className="opal opal-outline opal-awake opal-rainbow"
-          style={{
-            // opacity: this.state.mouseY / window.innerHeight,
-            color: `rgb(${
-              (Math.abs(
-                (this.state.posX - this.state.mouseX) / this.state.posX
-              ) *
-                200 +
-                Math.abs(
-                  (this.state.posY - this.state.mouseY) / this.state.posY
-                ) *
-                200)}, ${
-              (Math.abs(
-                (this.state.posX - this.state.mouseX) / this.state.posX
-              ) *
-                200 +
-                Math.abs(
-                  (this.state.posY - this.state.mouseY) / this.state.posY
-                ) *
-                200)}, ${
-              (Math.abs(
-                (this.state.posX - this.state.mouseX) / this.state.posX
-              ) *
-                200 +
-                Math.abs(
-                  (this.state.posY - this.state.mouseY) / this.state.posY
-                ) *
-                200)} )`,
-            backgroundColor: `rgb(${300 -
-              (Math.abs(
-                (this.state.posX - this.state.mouseX) / this.state.posX
-              ) *
-                300 +
-                Math.abs(
-                  (this.state.posY - this.state.mouseY) / this.state.posY
-                ) *
-                300)}, ${300 -
-                (Math.abs(
-                  (this.state.posX - this.state.mouseX) / this.state.posX
-                ) *
-                  300 +
-                  Math.abs(
-                    (this.state.posY - this.state.mouseY) / this.state.posY
-                  ) *
-                  300)}, ${300 -
-                  (Math.abs(
-                    (this.state.posX - this.state.mouseX) / this.state.posX
-                  ) *
-                    300 +
-                    Math.abs(
-                      (this.state.posY - this.state.mouseY) / this.state.posY
-                    ) *
-                    300)})`
-            // filter: `saturate(${(this.state.mouseY / window.innerHeight) * 100}%)`
-          }}
-        >
+          className={"opal opal-outline " + (this.state.opal != "" ? "-" + this.state.opal : "") + " " + (this.isSelected() ? "" : "opal-awake")}>
           <div className="opal-soften">{this.state.text}</div>
         </div>
-      </div>
-    );
+      </div>);
+    } else {
+      let text_value = (Math.abs(
+        (this.state.posX - this.state.mouseX) / this.state.posX
+      ) *
+        300 +
+        Math.abs(
+          (this.state.posY - this.state.mouseY) / this.state.posY
+        ) *
+        300);
+      let background_value = 300 -
+        (Math.abs(
+          (this.state.posX - this.state.mouseX) / this.state.posX
+        ) *
+          1000 +
+          Math.abs(
+            (this.state.posY - this.state.mouseY) / this.state.posY
+          ) *
+          1000);
+      let padding_bottom = 0;
+      if (this.state.mouseY - this.state.posY > 30) {
+        padding_bottom = this.state.mouseY - this.state.posY;
+      }
+      return (
+        <div>
+          <div
+            ref={element => {
+              this.setPosition(element);
+            }}
+            className="opal opal-outline opal-awake opal-bright"
+            style={{
+              // opacity: this.state.mouseY / window.innerHeight,
+              color: `rgb(${text_value}, ${text_value}, ${text_value} )`,
+              backgroundColor: `rgb(${background_value}, ${background_value}, ${background_value})`,
+              marginBottom: padding_bottom
+              // filter: `saturate(${(this.state.mouseY / window.innerHeight) * 100}%)`
+            }}
+          >
+            <div className="opal-soften">{this.state.text}</div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

@@ -100,6 +100,11 @@ h3 {
 
 .expanded h1 {
   padding-top: 0px;
+  /* font-size: 40pt */
+}
+
+.expanded .opal {
+  /* color: white; */
 }
 
 /* .profile:hover {
@@ -132,6 +137,7 @@ h3 {
 
 .button-container {
   width: 50vw;
+  height: 30vh;
   padding-top: 45vh;
   /* position: fixed; */
   /* display: inline-block; */
@@ -166,6 +172,7 @@ h3 {
   /* margin-left: 25%; */
   width: 80%;
 }
+
 /* MOBILE */
 @media (max-width: 550px) {
   .container {
