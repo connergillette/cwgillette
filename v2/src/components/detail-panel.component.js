@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Button from "./button.component";
+import ContentPanel from "./content-panel.component"
 import ReactDOM from "react-dom";
 // import logo from "./logo.svg";
 import "../App.css";
@@ -8,6 +9,7 @@ import "../opalescent.css";
 class DetailPanel extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       expanded: props.expanded,
       toggleExpanded: props.toggleExpanded,
@@ -28,8 +30,16 @@ class DetailPanel extends Component {
   }
 
   toggleExpandedLocal = (selection) => {
-    this.setState({ expanded: !this.state.expanded, selection: selection });
-    this.state.toggleExpanded();
+    console.log(selection, this.state.selection)
+
+    // collapse
+    if (this.state.selection == ''
+      || selection === this.state.selection || !this.state.expanded) {
+      this.setState({ expanded: !this.state.expanded });
+    } else { // switch to different context
+
+    }
+    this.setState({ selection: selection });
   };
 
   render() {
@@ -104,66 +114,9 @@ class DetailPanel extends Component {
                 </div>
               </div>
             </div>
-            {/* <div className="container contact-container text-center">
-              <div className="row">
-                <div className="col-3">
-                  <a
-                    href="mailto:connerwgillette@gmail.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="text-center"
-                  >
-                    <img
-                      className="social-icon"
-                      src="./assets/envelope.png"
-                      alt="Envelope icon"
-                    />
-                  </a>
-                </div>
-                <div className="col-3">
-                  <a
-                    href="https://github.com/connergillette"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="text-center"
-                  >
-                    <img
-                      className="social-icon"
-                      src="./assets/github.png"
-                      alt="GitHub icon"
-                    />
-                  </a>
-                </div>
-                <div className="col-3">
-                  <a
-                    href="https://linkedin.com/in/connergillette"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="text-center"
-                  >
-                    <img
-                      className="social-icon"
-                      src="./assets/linkedin.svg"
-                      alt="LinkedIn icon"
-                    />
-                  </a>
-                </div>
-                <div className="col-3">
-                  <a
-                    href="https://twitter.com/connerwgillette"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="text-center"
-                  >
-                    <img
-                      className="social-icon"
-                      src="./assets/twitter.svg"
-                      alt="Twitter icon"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div> */}
+            <div>
+              <ContentPanel selection={this.state.selection}></ContentPanel>
+            </div>
           </div>
         </div>
       </div>

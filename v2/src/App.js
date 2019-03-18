@@ -13,11 +13,11 @@ class App extends Component {
     };
   }
 
-  toggleExpanded = () => {
-    // TODO: Declare functions this way
-    console.log("toggleExpanded " + this.state.expanded);
-    this.setState({ expanded: !this.state.expanded });
-  };
+  // toggleExpanded = () => {
+  //   // TODO: Declare functions this way
+  //   console.log("toggleExpanded " + this.state.expanded);
+  //   this.setState({ expanded: !this.state.expanded });
+  // };
   render() {
     return (
       <div
@@ -32,7 +32,7 @@ class App extends Component {
         {/* <div class={this.state.expanded ? "opal-soften" : ""}> */}
         <DetailPanel
           expanded={this.state.expanded}
-          toggleExpanded={this.toggleExpanded}
+        // toggleExpanded={this.toggleExpanded}
         />
         {/* </div> */}
         {/* </div>

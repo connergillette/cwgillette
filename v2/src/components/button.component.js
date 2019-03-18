@@ -63,7 +63,7 @@ class Button extends Component {
           ref={element => {
             this.setPosition(element);
           }}
-          className={"opal opal-outline " + (this.state.opal != "" ? "-" + this.state.opal : "") + " " + (this.isSelected() ? "" : "opal-awake")}>
+          className={"opal opal-outline opal" + (this.state.opal != "" ? "-" + this.state.opal : "") + " " + (this.isSelected() ? "selected" : "opal-awake")}>
           <div className="opal-soften">{this.state.text}</div>
         </div>
       </div>);
@@ -85,10 +85,7 @@ class Button extends Component {
             (this.state.posY - this.state.mouseY) / this.state.posY
           ) *
           1000);
-      let padding_bottom = 0;
-      if (this.state.mouseY - this.state.posY > 30) {
-        padding_bottom = this.state.mouseY - this.state.posY;
-      }
+
       return (
         <div>
           <div
@@ -100,7 +97,7 @@ class Button extends Component {
               // opacity: this.state.mouseY / window.innerHeight,
               color: `rgb(${text_value}, ${text_value}, ${text_value} )`,
               backgroundColor: `rgb(${background_value}, ${background_value}, ${background_value})`,
-              marginBottom: padding_bottom
+              // marginTop: margin_top
               // filter: `saturate(${(this.state.mouseY / window.innerHeight) * 100}%)`
             }}
           >

@@ -117,6 +117,7 @@ h3 {
 
 .opal {
   max-width: 150px !important;
+  margin-top: 10pt;
   z-index: 99999;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -137,7 +138,7 @@ h3 {
 
 .button-container {
   width: 50vw;
-  height: 30vh;
+  /* height: 30vh; */
   padding-top: 45vh;
   /* position: fixed; */
   /* display: inline-block; */
@@ -168,9 +169,26 @@ h3 {
   transition: border 0.2s;
 }
 
+/* .selected {
+  color: white !important;
+} */
+
 .contact-container {
   /* margin-left: 25%; */
   width: 80%;
+}
+
+.content {
+  opacity: 0;
+  font-size: 18pt;
+  text-align: left;
+  padding-top: 40pt;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.expanded .content {
+  opacity: 1;
 }
 
 /* MOBILE */
