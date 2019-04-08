@@ -3,7 +3,7 @@ body {
   /* font-family: "Catamaran", Helvetica, sans-serif; */
   font-family: futura-pt, sans-serif;
   color: #292929 !important;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .header {
@@ -164,7 +164,7 @@ h3 {
 }
 
 .opal-outline {
-  border: 2px solid #292929 !important;
+  border: 1px solid #292929 !important;
   -webkit-transition: border 0.2s;
   transition: border 0.2s;
 }
@@ -189,7 +189,74 @@ h3 {
 
 .expanded .content {
   opacity: 1;
+  padding-top: 50pt
 }
+
+.content img {
+  height: 300pt;
+  border-radius: 4pt;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content h2 {
+  font-size: 20pt
+}
+
+.content p {
+  font-size: 14pt
+}
+
+.content ul {
+  margin: 0pt;
+  padding: 0pt;
+}
+
+.content li {
+  font-size: 14pt;
+  display: inline-block;
+  /* background-color: gray;
+  color: white; */
+  /* margin: 3pt; */
+  padding: 5pt;
+  border-radius: 4pt;
+  list-style: none;
+}
+
+.content .opal {
+  /* min-width: 200px !important; */
+  padding: 0px !important;
+  margin: 0px !important;
+  max-width: 400px !important;
+}
+
+.content .opal-awake {
+  color: #292929 !important;
+}
+
+.content .opal-awake:hover {
+  color: white !important;
+}
+
+.small-content {
+  padding-top: 15%;
+}
+
+.opal-node:before { 
+  background: linear-gradient(135deg, #008d07 0%, #11a15ec5 40%, #006696c5 75%, #00598d 100%) no-repeat !important; 
+}
+
+.opal-angular:before {
+  background: linear-gradient(135deg, rgb(214, 33, 33) 0%,#c71212 40%, #b80909 60%) no-repeat !important; 
+}
+
+.opal-react:before {
+  background: linear-gradient(135deg, #0086df 30%,  #0067dd 50%, #0f2652 70%) no-repeat !important; 
+}
+
+.opal-java:before {
+  background: linear-gradient(135deg, #005f9e 20%, #915e00 50%, #ff9100 80%) no-repeat !important; 
+}
+
 
 /* MOBILE */
 @media (max-width: 550px) {
