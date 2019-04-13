@@ -65,7 +65,7 @@ class DetailPanel extends Component {
 
         <div className={"col-12"}>
           <div className={"header " + (this.state.expanded ? "expanded " : "")}>
-            <h1>CONNER GILLETTE</h1>
+            <div className="opal-text"><h1>CONNER GILLETTE</h1></div>
 
             {/* {this.state.mouseX} {this.state.mouseY} */}
             <div className="subheader-container">
@@ -119,7 +119,7 @@ class DetailPanel extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }

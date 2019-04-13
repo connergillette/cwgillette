@@ -33,29 +33,29 @@ class ContentPanel extends Component {
                 <h2 className="font-weight-bold">Technical Skills</h2>
                 <ul>
                     <li>
-                        <div className="opal opal-awake opal-bright">
+                        <div className="opal opal-awake opal-d20">
                             <div className="opal-soften">JavaScript / TypeScript</div>
                         </div>
                     </li>
-                    <li><div className="opal opal-node">
+                    <li><div className="opal opal-awake opal-d20">
                         <div className="opal-soften">NodeJS / ExpressJS</div>
                     </div></li>
-                    <li><div className="opal opal-angular">
+                    <li><div className="opal opal-awake opal-d20">
                         <div className="opal-soften">AngularJS</div>
                     </div></li>
-                    <li><div className="opal opal-react">
+                    <li><div className="opal opal-awake opal-d20">
                         <div className="opal-soften">ReactJS</div>
                     </div></li>
-                    <li><div className="opal opal-java">
+                    <li><div className="opal opal-awake opal-d20">
                         <div className="opal-soften">Java</div>
                     </div></li>
-                    <li><div className="opal opal-awake opal-bright">
+                    <li><div className="opal opal-awake opal-d20">
                         <div className="opal-soften">HTML / CSS / Bootstrap</div>
                     </div></li>
-                    <li><div className="opal opal-awake opal-success">
+                    <li><div className="opal opal-awake opal-d20">
                         <div className="opal-soften">MongoDB</div>
                     </div></li>
-                    <li><div className="opal opal-awake opal-bright">
+                    <li><div className="opal opal-awake opal-d20">
                         <div className="opal-soften">Heroku</div>
                     </div></li>
                 </ul>
@@ -83,7 +83,6 @@ class ContentPanel extends Component {
 
 
     render() {
-        console.log(this.state.selection);
         switch (this.state.selection) {
             case 'About':
                 return (

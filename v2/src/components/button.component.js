@@ -13,6 +13,8 @@ class Button extends Component {
       text: this.props.text,
       posX: 0,
       posY: 0,
+      leftPos: 0,
+      rightPos: 0,
       expanded: this.props.expanded,
       selection: this.props.selection,
       opal: this.props.opal
@@ -37,19 +39,27 @@ class Button extends Component {
   }
 
   setPosition(element) {
-    if (element != null) {
+    if (element != null && !this.mouseIsVerticallyAligned()) {
       let _element = element.getBoundingClientRect();
       if (
         this.state.posX != _element.x + _element.width / 2 &&
         this.state.posY != _element.y + _element.height / 2
       ) {
-        console.log(_element);
         this.setState({
           posX: _element.x + _element.width / 2,
-          posY: _element.y + _element.height / 2
+          posY: _element.y + _element.height / 2,
+          leftPos: _element.x,
+          rightPos: _element.x + _element.width
         });
       }
     }
+  }
+
+  mouseIsVerticallyAligned() {
+    if (this.state.mouseX > this.state.leftPos && this.state.mouseX < this.state.rightPos) {
+      return true;
+    }
+    return false;
   }
 
   isSelected() {
@@ -85,9 +95,32 @@ class Button extends Component {
             (this.state.posY - this.state.mouseY) / this.state.posY
           ) *
           1000);
+      let padding_top, padding_left, padding_right, padding_bottom = 20
+      if (Math.abs(this.state.posX - this.state.mouseX) < 200 && Math.abs(this.state.posY - this.state.mouseY) < 200) {
+        if (this.state.posY - this.state.mouseY < 200) {
+          padding_top = (this.state.posY - this.state.mouseY) / 20
+        } else if (this.state.mouseY - this.state.posY < 0) {
+          padding_top = (this.state.mouseY - this.state.posY)
+        }
 
+        if (this.state.posX - this.state.mouseX < 200) {
+          padding_right = (this.state.posX - this.state.mouseX) / 20
+        } else if (this.state.mouseX - this.state.posX < 200) {
+          padding_left = (this.state.mouseX - this.state.posX) / 20
+        }
+      }
+      // if (this.state.posY - this.state.mouseY < 200) {
+      //   padding_top = 20 - (this.state.posY - this.state.mouseY) / 10
+      // }
+
+      // if (this.state.posX - this.state.mouseX < 200) {
+      //   padding_left = (this.state.posX - this.state.mouseX) / 10
+      // }
+      // if (this.state.mouseX - this.state.posX < 200) {
+      //   padding_right = (this.state.mouseX - this.state.posX) / 10
+      // }
       return (
-        <div>
+        <div className="button-magnet-container" style={{ paddingTop: padding_top + 'pt', paddingRight: padding_right + 'pt', paddingBottom: padding_bottom + 'pt', paddingLeft: padding_left + 'pt', }}>
           <div
             ref={element => {
               this.setPosition(element);
@@ -97,7 +130,6 @@ class Button extends Component {
               // opacity: this.state.mouseY / window.innerHeight,
               color: `rgb(${text_value}, ${text_value}, ${text_value} )`,
               backgroundColor: `rgb(${background_value}, ${background_value}, ${background_value})`,
-              // marginTop: margin_top
               // filter: `saturate(${(this.state.mouseY / window.innerHeight) * 100}%)`
             }}
           >

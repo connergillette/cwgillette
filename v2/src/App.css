@@ -3,7 +3,7 @@ body {
   /* font-family: "Catamaran", Helvetica, sans-serif; */
   font-family: futura-pt, sans-serif;
   color: #292929 !important;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 .header {
@@ -257,6 +257,25 @@ h3 {
   background: linear-gradient(135deg, #005f9e 20%, #915e00 50%, #ff9100 80%) no-repeat !important; 
 }
 
+.opal-d20:before {
+  background: linear-gradient(135deg, #005f9e 40%, #5900ff 80%) no-repeat !important;
+}
+
+/* .opal-text {
+  background: -webkit-linear-gradient(#ff0000b0 40%, #0000ff80, #00a2ff50);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-animation: text_pan360 5s infinite, sway 8s infinite;
+  animation-timing-function: linear;
+
+}
+
+.opal-text:before {
+} */
+
+.button-magnet-container {
+  padding: 20pt
+}
 
 /* MOBILE */
 @media (max-width: 550px) {
@@ -333,5 +352,11 @@ h3 {
 
   .expanded .profile {
     width: 20vw;
+  }
+}
+
+@keyframes text_pan360 {
+  to {
+    transform: rotate(360deg);
   }
 }
