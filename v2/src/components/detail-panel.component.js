@@ -30,16 +30,17 @@ class DetailPanel extends Component {
   }
 
   toggleExpandedLocal = (selection) => {
-    console.log(selection, this.state.selection)
-
     // collapse
     if (this.state.selection == ''
       || selection === this.state.selection || !this.state.expanded) {
       this.setState({ expanded: !this.state.expanded });
-    } else { // switch to different context
+      this.setState({ selection: selection });
 
+    } else { // switch to different context
+      // this.setState({ expanded: false });
+      this.setState({ selection: selection });
+      // this.setState({ expanded: true });
     }
-    this.setState({ selection: selection });
   };
 
   render() {
@@ -80,7 +81,7 @@ class DetailPanel extends Component {
                     mouseY={this.state.mouseY}
                     expanded={this.state.expanded}
                     selection={this.state.selection}
-                    opal="bright"
+                    opal="react"
                     text="About"
                   />
                 </div>
@@ -90,7 +91,7 @@ class DetailPanel extends Component {
                     mouseY={this.state.mouseY}
                     expanded={this.state.expanded}
                     selection={this.state.selection}
-                    opal="light"
+                    opal="d20"
                     text="Resume"
                   />
                 </div>

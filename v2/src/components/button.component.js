@@ -78,63 +78,14 @@ class Button extends Component {
         </div>
       </div>);
     } else {
-      let text_value = (Math.abs(
-        (this.state.posX - this.state.mouseX) / this.state.posX
-      ) *
-        300 +
-        Math.abs(
-          (this.state.posY - this.state.mouseY) / this.state.posY
-        ) *
-        300);
-      let background_value = 300 -
-        (Math.abs(
-          (this.state.posX - this.state.mouseX) / this.state.posX
-        ) *
-          1000 +
-          Math.abs(
-            (this.state.posY - this.state.mouseY) / this.state.posY
-          ) *
-          1000);
-      let padding_top, padding_left, padding_right, padding_bottom = 20
-      if (Math.abs(this.state.posX - this.state.mouseX) < 200 && Math.abs(this.state.posY - this.state.mouseY) < 200) {
-        if (this.state.posY - this.state.mouseY < 200) {
-          padding_top = (this.state.posY - this.state.mouseY) / 20
-        } else if (this.state.mouseY - this.state.posY < 0) {
-          padding_top = (this.state.mouseY - this.state.posY)
-        }
-
-        if (this.state.posX - this.state.mouseX < 200) {
-          padding_right = (this.state.posX - this.state.mouseX) / 20
-        } else if (this.state.mouseX - this.state.posX < 200) {
-          padding_left = (this.state.mouseX - this.state.posX) / 20
-        }
-      }
-      // if (this.state.posY - this.state.mouseY < 200) {
-      //   padding_top = 20 - (this.state.posY - this.state.mouseY) / 10
-      // }
-
-      // if (this.state.posX - this.state.mouseX < 200) {
-      //   padding_left = (this.state.posX - this.state.mouseX) / 10
-      // }
-      // if (this.state.mouseX - this.state.posX < 200) {
-      //   padding_right = (this.state.mouseX - this.state.posX) / 10
-      // }
       return (
-        <div className="button-magnet-container" style={{ paddingTop: padding_top + 'pt', paddingRight: padding_right + 'pt', paddingBottom: padding_bottom + 'pt', paddingLeft: padding_left + 'pt', }}>
-          <div
-            ref={element => {
-              this.setPosition(element);
-            }}
-            className="opal opal-outline opal-awake opal-bright"
-            style={{
-              // opacity: this.state.mouseY / window.innerHeight,
-              color: `rgb(${text_value}, ${text_value}, ${text_value} )`,
-              backgroundColor: `rgb(${background_value}, ${background_value}, ${background_value})`,
-              // filter: `saturate(${(this.state.mouseY / window.innerHeight) * 100}%)`
-            }}
-          >
-            <div className="opal-soften">{this.state.text}</div>
-          </div>
+        <div
+          ref={element => {
+            this.setPosition(element);
+          }}
+          className={"opal opal-outline opal-awake opal" + (this.state.opal != "" ? "-" + this.state.opal : "") + " " + (this.isSelected() ? "selected" : "opal-awake")}
+        >
+          <div className="opal-soften"><div className="opal-layer">{this.state.text}</div></div>
         </div>
       );
     }

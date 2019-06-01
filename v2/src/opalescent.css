@@ -23,7 +23,7 @@ a:hover {
   height: 40px;
   min-width: 80px;
   max-width: 200px;
-  color: white;
+  color: black;
   font-size: 18px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -33,7 +33,7 @@ a:hover {
 }
 
 .opal:hover {
-  color: white;
+  /* color: white; */
 }
 
 .opal:before {
@@ -44,7 +44,7 @@ a:hover {
   height: 400px;
   left: -50px;
   top: -200px;
-  background: linear-gradient( 135deg, #ff0000b0 19%, #0000ff80 80%, #00a2ff50 90%) no-repeat;
+  background: linear-gradient(135deg, #ff0000b0 19%, #0000ff80 80%, #00a2ff50 90%) no-repeat;
   -webkit-animation: pan360 5s infinite, sway 8s infinite;
   animation: pan360 5s infinite, sway 8s infinite;
   animation-timing-function: linear;
@@ -76,7 +76,7 @@ a:hover {
   height: 130vw;
   top: -50vw;
   left: -20vw;
-  background: linear-gradient( 135deg, #ff0000b0 19%, #0000ff80 80%, #00a2ff50 90%) no-repeat;
+  background: linear-gradient(135deg, #ff0000b0 19%, #0000ff80 80%, #00a2ff50 90%) no-repeat;
   -webkit-animation: pan360 10s infinite, headerSway 8s infinite ease-in-out;
   animation: pan360 10s infinite, headerSway 8s infinite ease-in-out;
   animation-timing-function: linear;
@@ -104,15 +104,15 @@ a:hover {
 }
 
 .opal-rainbow:before {
-  background: linear-gradient( to bottom right, rgba(255, 255, 0, 0.85) 10%, rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0.75), rgba(0, 255, 0, 0.75) 19%, rgba(0, 0, 255, 0.65) 40%, rgba(255, 0, 0, 0.65), rgba(255, 255, 0, 0.85) 80%), linear-gradient( to top right, rgba(255, 255, 0, 0.85) 10%, rgba(255, 0, 0, 0.75), rgba(0, 255, 0, 0.75) 25%, rgba(0, 0, 255, 0.65) 40%, rgba(255, 0, 0, 0.65), rgba(255, 255, 0, 0.85) 80%);
+  background: linear-gradient(to bottom right, rgba(255, 255, 0, 0.85) 10%, rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0.75), rgba(0, 255, 0, 0.75) 19%, rgba(0, 0, 255, 0.65) 40%, rgba(255, 0, 0, 0.65), rgba(255, 255, 0, 0.85) 80%), linear-gradient(to top right, rgba(255, 255, 0, 0.85) 10%, rgba(255, 0, 0, 0.75), rgba(0, 255, 0, 0.75) 25%, rgba(0, 0, 255, 0.65) 40%, rgba(255, 0, 0, 0.65), rgba(255, 255, 0, 0.85) 80%);
 }
 
 .opal-rainbow-soft:before {
-  background: linear-gradient( to top right, rgb(255, 102, 0), rgba(255, 0, 0, 0.733), rgba(192, 26, 192, 0.984), rgba(50, 0, 205, 0.449), teal, green, rgba(0, 0, 255, 0.5)), linear-gradient(to bottom right, orange, rgba(0, 0, 255, 0.6), yellow);
+  background: linear-gradient(to top right, rgb(255, 102, 0), rgba(255, 0, 0, 0.733), rgba(192, 26, 192, 0.984), rgba(50, 0, 205, 0.449), teal, green, rgba(0, 0, 255, 0.5)), linear-gradient(to bottom right, orange, rgba(0, 0, 255, 0.6), yellow);
 }
 
 .opal-bright:before {
-  background: linear-gradient( to bottom right, rgba(0, 255, 255, 0.719), rgba(255, 0, 255, 0.719), rgb(255, 255, 0)), linear-gradient( to top right, rgba(0, 255, 255, 0.719), rgba(255, 0, 255, 0.719), rgb(255, 255, 0));
+  background: linear-gradient(to bottom right, rgba(0, 255, 255, 0.719), rgba(255, 0, 255, 0.719), rgb(255, 255, 0)), linear-gradient(to top right, rgba(0, 255, 255, 0.719), rgba(255, 0, 255, 0.719), rgb(255, 255, 0));
 }
 
 .opal-dark:before {
@@ -121,7 +121,7 @@ a:hover {
 }
 
 .opal-light:before {
-  background: linear-gradient( to bottom right, rgb(255, 189, 65), rgb(255, 255, 41), rgb(90, 255, 255), rgb(255, 134, 154));
+  background: linear-gradient(to bottom right, rgb(255, 189, 65), rgb(255, 255, 41), rgb(90, 255, 255), rgb(255, 134, 154));
 }
 
 .opal-awake:before {
@@ -150,7 +150,7 @@ a:hover {
 .opal-soften {
   height: 100%;
   width: 100%;
-  /* background-color: #ffffff50; */
+  background-color: #ffffff7e;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
   padding-top: 7px;
@@ -174,13 +174,13 @@ a:hover {
 }
 
 .opal:hover:before {
-  -webkit-animation: pan360 2s infinite;
-  animation: pan360 2s infinite;
+  -webkit-animation: pan360 5s infinite;
+  animation: pan360 5s infinite;
   animation-timing-function: linear;
 }
 
 .opal .opal-soften:hover {
-  background-color: #ffffff2f;
+  background-color: #ffffffc7;
 }
 
 .opal .opal-framed:hover {
@@ -194,7 +194,7 @@ a:hover {
 }
 
 .opal-success:before {
-  background: linear-gradient( 30deg, rgba(50, 205, 50, 0.747), rgba(0, 128, 0, 0.788), rgb(0, 87, 0));
+  background: linear-gradient(30deg, rgba(50, 205, 50, 0.747), rgba(0, 128, 0, 0.788), rgb(0, 87, 0));
   -webkit-animation: sway 3s infinite, pan360 3s infinite;
   animation: sway 3s infinite, pan360 3s infinite;
   animation-timing-function: linear;
@@ -238,10 +238,12 @@ a:hover {
     top: -200px;
     left: -50px;
   }
+
   to {
     top: -300px;
     left: -100px;
   }
+
   to {
     top: -200px;
     left: -50px;
@@ -253,10 +255,12 @@ a:hover {
     top: -50vw;
     left: -20vw;
   }
+
   to {
     top: -45vw;
     left: -15vw;
   }
+
   to {
     top: -50vw;
     left: -20vw;
