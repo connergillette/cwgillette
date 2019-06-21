@@ -241,24 +241,28 @@ h3 {
   padding-top: 15%;
 }
 
-.opal-node:before { 
-  background: linear-gradient(135deg, #008d07 0%, #11a15ec5 40%, #006696c5 75%, #00598d 100%) no-repeat !important; 
+.opal-node:before {
+  background: linear-gradient(135deg, #008d07 0%, #11a15ec5 40%, #006696c5 75%, #00598d 100%) no-repeat !important;
 }
 
 .opal-angular:before {
-  background: linear-gradient(135deg, rgb(214, 33, 33) 0%,#c71212 40%, #b80909 60%) no-repeat !important; 
+  background: linear-gradient(135deg, rgb(214, 33, 33) 0%, #c71212 40%, #b80909 60%) no-repeat !important;
 }
 
 .opal-react:before {
-  background: linear-gradient(135deg, #0086df 30%,  #0067dd 50%, #0f2652 70%) no-repeat !important; 
+  background: linear-gradient(135deg, #0086df 30%, #0067dd 50%, #0f2652 70%) no-repeat !important;
 }
 
 .opal-java:before {
-  background: linear-gradient(135deg, #005f9e 20%, #915e00 50%, #ff9100 80%) no-repeat !important; 
+  background: linear-gradient(135deg, #005f9e 20%, #915e00 50%, #ff9100 80%) no-repeat !important;
 }
 
 .opal-d20:before {
   background: linear-gradient(135deg, #005f9e 40%, #5900ff 80%) no-repeat !important;
+}
+
+.opal-digitalis:before {
+  background: linear-gradient(135deg, #ffffff 10%, #e732ff 40%, #800064 80%) no-repeat !important;
 }
 
 /* .opal-text {

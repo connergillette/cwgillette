@@ -33,7 +33,7 @@ class ContentPanel extends Component {
                 <h2 className="font-weight-bold">Technical Skills</h2>
                 <ul>
                     <li>
-                        <div className="opal opal-awake opal-d20">
+                        <div className="opal opal-digitalis">
                             <div className="opal-soften">JavaScript / TypeScript</div>
                         </div>
                     </li>
